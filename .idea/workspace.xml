@@ -4,30 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cf5d50a-469e-4a41-add9-4a852f8a87ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Movies API.postman_collection.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/movieController.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Movie.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/MovieModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/movService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/libConfig.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/BookController.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/BookMongooseController.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/errorHandler/HttpError.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/errorHandler/errorHandler.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Book.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/bookMongooseRouter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/bookRouter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/libRouter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/libMongooseService.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/libService.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/libServiceImplEmbedded.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/tools.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validation/bodyValidation.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validation/bookMongooseSchema.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validation/bookSchemas.ts" beforeDir="false" />
+    <list default="true" id="6cf5d50a-469e-4a41-add9-4a852f8a87ab" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,12 +30,12 @@
     &quot;assignee&quot;: &quot;DmitriiBank&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/DmitriiBank/library-server.git&quot;,
-    &quot;accountId&quot;: &quot;b7e9c621-4a0e-4307-925a-713d4f9e019d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/DmitriiBank/film-server.git",
+    "accountId": "b7e9c621-4a0e-4307-925a-713d4f9e019d"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -67,24 +45,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/dmitrii/Desktop/BackEnd/Node.js/Cw/films-server /src/controllers",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "npm.start.executor": "Run",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dmitrii/Desktop/BackEnd/Node.js/Cw/films-server /src/controllers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/controllers" />
@@ -149,6 +127,7 @@
       <workItem from="1755034548342" duration="652000" />
       <workItem from="1755088116978" duration="6465000" />
       <workItem from="1755108012812" duration="18787000" />
+      <workItem from="1755127023753" duration="1372000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -206,16 +185,44 @@
       <option name="project" value="LOCAL" />
       <updated>1754826716170</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1755127287805</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1755127287806</updated>
+    </task>
+    <task id="LOCAL-00009" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1755128315068</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1755128315068</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
     <MESSAGE value="Complete all methods LibService, added endpoints.&#10;Added joi + express-validation" />
     <MESSAGE value="Added mongoose" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added mongoose" />
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>
