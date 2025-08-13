@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "7dd09bb8-1da0-4158-8e5a-50348e173fe5",
+		"name": "Movies API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46116381",
+		"_collection_link": "https://dmitriibank-9234856.postman.co/workspace/Java-27-30~f9f92cbe-3c8e-41d3-aea3-ebeb5c4e7ca8/collection/46116381-7dd09bb8-1da0-4158-8e5a-50348e173fe5?action=share&source=collection_link&creator=46116381"
+	},
+	"item": [
+		{
+			"name": "getMoviesByGenres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3555/api/movies/genres/?genre=Action&genre=Comedy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3555",
+					"path": [
+						"api",
+						"movies",
+						"genres",
+						""
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Action"
+						},
+						{
+							"key": "genre",
+							"value": "Comedy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMoviesByLanguages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3555/api/movies/languages/?language=Russian",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3555",
+					"path": [
+						"api",
+						"movies",
+						"languages",
+						""
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "Russian"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMoviesImdbLessThanTomatoes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3555/api/movies/compare?field1=imdb.rating&field2=tomatoes.viewer.rating&operator=lt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3555",
+					"path": [
+						"api",
+						"movies",
+						"compare"
+					],
+					"query": [
+						{
+							"key": "field1",
+							"value": "imdb.rating"
+						},
+						{
+							"key": "field2",
+							"value": "tomatoes.viewer.rating"
+						},
+						{
+							"key": "operator",
+							"value": "lt"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTopTwoMoviesByAwards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3555/api/movies/top-awards?limit=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3555",
+					"path": [
+						"api",
+						"movies",
+						"top-awards"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMoviesGroupedByRatingWithYear",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3555/api/movies/grouped-rating?year=2012&field=tomatoes.viewer.rating",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3555",
+					"path": [
+						"api",
+						"movies",
+						"grouped-rating"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2012"
+						},
+						{
+							"key": "field",
+							"value": "tomatoes.viewer.rating"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
