@@ -1,24 +1,80 @@
 import * as mongoose from "mongoose";
-import { v4 as uuidv4 } from 'uuid';
-import {BookGenres, BookStatus} from "./Book.js";
+import {MovieGenres, Languages, Countries} from "./Movie.js";
 
-const PickListSchema = new mongoose.Schema({
-    reader: {type:String, required:true},
-    pick_date: {type:String, required: true},
-    return_date:{type:String, default:null}
+
+export const AwardsSchema = new mongoose.Schema({
+    wins: {type: Number, default: 0},
+    nominations: {type: Number, default: 0},
+    text: {type: String, default: ''}
 }, {
-    _id:false
+    _id: false
 });
 
-export const BookMongooseSchema = new mongoose.Schema({
-    //_id:{type:String, length: 36, required: true},
-    //_id:{type:'UUID', default: () => uuidv4()},
-    _id: {type: String, default: () => uuidv4()},
-    title: {type: String, required: true},
-    author: {type: String, required: true},
-    genre: {type: String, enum: Object.values(BookGenres), required:true},
-    status: {type: String, enum: Object.values(BookStatus), required:true},
-    pickList: {type: [PickListSchema], default: []}
-})
+const ImdbSchema = new mongoose.Schema({
+    rating: {type: Number, default: null},
+    votes: {type: Number, default: null},
+    id: {type: Number, default: null}
+}, {
+    _id: false
+});
 
-export const BookMongooseModel = mongoose.model('Book', BookMongooseSchema, 'book_collection')
+const TomatoesSchema = new mongoose.Schema({
+    viewer: {
+        rating: { type: Number, default: null },
+        numReviews: { type: Number, default: null },
+        meter: { type: Number, default: null }
+    },
+    fresh: { type: Number, default: null },
+    critic: {
+        rating: { type: Number, default: null },
+        numReviews: { type: Number, default: null },
+        meter: { type: Number, default: null }
+    },
+    rotten: { type: Number, default: null },
+    lastUpdated: { type: Date, default: null }
+}, { _id: false });
+
+const MovieSchema = new mongoose.Schema({
+    plot: { type: String, required: true },
+    genres: {
+        type: [String],
+        enum: Object.values(MovieGenres),
+        required: true
+    },
+    runtime: { type: Number, default: null },
+    cast: { type: [String], default: null },
+    poster: { type: String, required: true },
+    title: { type: String, required: true },
+    fullplot: { type: String, default: null },
+    languages: {
+        type: [String],
+        enum: Object.values(Languages),
+        required: true
+    },
+    released: { type: Date, default: null },
+    directors: { type: [String], default: null },
+    rated: { type: String, default: null },
+    awards: {
+        type: AwardsSchema,
+        default: () => ({})
+    },
+    lastupdated: { type: String, default: null },
+    year: { type: Number, default: null },
+    imdb: {
+        type: ImdbSchema,
+        default: () => ({})
+    },
+    countries: {
+        type: [String],
+        enum: Object.values(Countries),
+        required: true
+    },
+    type: { type: String, default: 'movie' },
+    tomatoes: {
+        type: TomatoesSchema,
+        default: () => ({})
+    },
+    num_mflix_comments: { type: Number, default: 0 }
+});
+
+export const MovieMongooseModel = mongoose.model('Movie', MovieSchema);

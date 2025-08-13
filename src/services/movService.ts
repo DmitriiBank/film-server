@@ -1,10 +1,10 @@
-import {Book, BookGenres} from "../model/Book.ts";
+import {Languages, Movie, MovieGenres} from "../model/Movie.js";
 
-export interface LibService {
-    addBook: (book: Book) => Promise<boolean>;
-    removeBook: (id:string) => Promise<Book>;
-    pickUpBook: (id: string, reader: string) => Promise<void>;
-    returnBook: (id: string) => Promise<void>;
-    getAllBooks:() => Promise<Book[]>;
-    getBooksByGenre:(genre:BookGenres) => Promise<Book[]>
+
+export interface MovieService {
+    getCompareMoviesRating:(field1: string, field2: string, operator:string) => Promise<Movie[]>
+    getMoviesByLanguage:(language:Languages) => Promise<Movie[]>;
+    getMoviesWithBothGenres:(genres: MovieGenres[]) => Promise<Movie[]>;
+    getTopMoviesByAwardWins:(limit: number) => Promise<{ title: string, wins: number }[]>;
+    getMoviesGroupedByImdbRating:(year: number, ratingField: string) => Promise<{ [rating: string]: string[] }>
 }

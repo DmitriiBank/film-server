@@ -1,57 +1,42 @@
-import {Response, Request} from "express";
-//import {libServiceEmbedded as service} from "../services/libServiceImplEmbedded.js";
-import {Book, BookDto} from "../model/Book.js";
-import {convertBookDtoToBook, getGenre, getStatus} from "../utils/tools.js";
-import {HttpError} from "../errorHandler/HttpError.js";
-import {libServiceMongo as service} from "../services/libServiceImplMongo.js";
+import {Languages, MovieGenres} from "../model/Movie.js";
+import {Request, Response} from "express";
+import {movieServiceMongo as service} from "../services/movieServiceImplMongo.js";
 
-export const getBooksByGengreAndStatus = async (req: Request, res: Response) => {
-    const {genre, status} = req.query;
-    const genre_upd = getGenre(genre as string);
-    const status_upd = getStatus(status as string);
-    const result = await service.getBooksByGenreAndStatus(genre_upd, status_upd);
+export const getCompareMoviesRating = async (req: Request, res: Response) => {
+    const {field1, field2, operator} = req.query
+    const result = await service.getCompareMoviesRating(field1 as string, field2 as string, operator as string);
     res.json(result);
 }
 
-export const getBooksByGenre = async (req: Request, res: Response) => {
-    const {genre} = req.query;
-    const genre_upd = getGenre(genre as string);
-    const result = await service.getBooksByGenre(genre_upd);
+export const getMoviesByLanguage = async (req: Request, res: Response) => {
+    const language = req.query.language as Languages
+    console.log(language)
+    const result = await service.getMoviesByLanguage(language);
     res.json(result);
 }
 
-
-export const returnBook = async (req: Request, res: Response) => {
-    const {id} = req.query;
-    await service.returnBook(id as string);
-    res.send("Book returned")
-}
-
-
-export const pickUpBook = async (req: Request, res: Response) => {
-    const {id, reader} = req.query;
-    await service.pickUpBook(id as string, reader as string);
-    res.send(`Book picked by ${reader}`)
-}
-
-
-export const addBook = async (req: Request, res: Response) => {
-    const dto = req.body as BookDto;
-    const book: Book = convertBookDtoToBook(dto);
-    const result = await service.addBook(book);
-    if (result)
-        res.status(201).send("Book successfully added")
-    else throw new HttpError(409, 'Book not added. Id conflict')
-}
-
-export const getAllBooks =async (req: Request, res: Response) => {
-    const result = await service.getAllBooks();
+export const getMoviesByGenres = async (req: Request, res: Response) => {
+    const genres = req.query.genre as MovieGenres[]
+    console.log(genres)
+    const result = await service.getMoviesWithBothGenres(genres);
     res.json(result);
 }
 
-export const removeBook = async (req: Request, res: Response) => {
-    const {id} = req.query;
-    const result = await service.removeBook(id as string);
-    res.json(result);
+export const getTopMoviesByAwardWins = async (req: Request, res: Response) => {
+    const limit = req.query.limit
+    if (limit) {
+        const result = await service.getTopMoviesByAwardWins(+limit);
+        res.json(result)
+    }
+    ;
 }
+
+export const getMoviesGroupedByRatingWithYear = async (req: Request, res: Response) => {
+    const {year, field} = req.query
+    if (year) {
+        const result = await service.getMoviesGroupedByImdbRating(+year , field as string);
+        res.json(result)
+    }
+}
+
 
