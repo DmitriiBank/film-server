@@ -190,3 +190,4 @@
 ::1 - - [13/Aug/2025:23:11:14 +0000] "GET /api/movies/compare?field1=imdb.rating&field2=tomatoes.viewer.rating&operator=lt HTTP/1.1" 200 52042 "-" "PostmanRuntime/7.45.0"
 ::1 - - [13/Aug/2025:23:11:18 +0000] "GET /api/movies/top-awards?limit=2 HTTP/1.1" 200 72 "-" "PostmanRuntime/7.45.0"
 ::1 - - [13/Aug/2025:23:11:33 +0000] "GET /api/movies/grouped-rating?year=2012&field=tomatoes.viewer.rating HTTP/1.1" 200 16417 "-" "PostmanRuntime/7.45.0"
+::1 - - [13/Aug/2025:23:43:24 +0000] "GET /api/movies/genres/?genre=Action&genre=Comedy HTTP/1.1" 200 903995 "-" "PostmanRuntime/7.45.0"

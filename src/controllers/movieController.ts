@@ -10,14 +10,12 @@ export const getCompareMoviesRating = async (req: Request, res: Response) => {
 
 export const getMoviesByLanguage = async (req: Request, res: Response) => {
     const language = req.query.language as Languages
-    console.log(language)
     const result = await service.getMoviesByLanguage(language);
     res.json(result);
 }
 
 export const getMoviesByGenres = async (req: Request, res: Response) => {
     const genres = req.query.genre as MovieGenres[]
-    console.log(genres)
     const result = await service.getMoviesWithBothGenres(genres);
     res.json(result);
 }
